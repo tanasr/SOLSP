@@ -1,0 +1,19 @@
+# ignore all files
+/*
+
+#except
+!.gitignore
+!README.md
+
+#include Assignment1
+!Assignment1/
+Assignment1/*
+!Assignment1/src/
+Assignment1/src/*
+!Assignment1/src/grad_descent
+!Assignment1/src/newton_method
+
+#include Assignment2
+!Assignment2/
+Assignment2/*
+!Assignment2/src/
