@@ -9,11 +9,11 @@ clear; close all; clc;
 
 %% Function F
 
-x = linspace(-3.5,3.5); 
-y = linspace(-4.5,4.5);
+x = linspace(-3,3); 
+y = linspace(-4,4);
 
 grad_steps_g1 = gradient_descent(1,1,0.01,1e4,'f'); % flag 'f' or 'g'
-grad_steps_g2 = gradient_descent(-1,0,0.01,1e4,'f');
+grad_steps_g2 = gradient_descent(-1,-1,0.01,1e4,'f');
 
 % contour plot
 subplot(1,3,1);
@@ -84,6 +84,7 @@ hold on;
 plot(steps_sym(:,1), steps_sym(:,2), "-o");hold on;
 plot(steps_sym(1,1),steps_sym(1,2),'ko','linewidth',1.5); %starting point
 colorbar();
+title('Function H');
 
 
 % adjust figure
@@ -92,5 +93,6 @@ y0=200;
 width=1250;
 height=450;
 set(gcf,'position',[x0,y0,width,height])
+exportgraphics(gcf,'plots/grad_descent.png','Resolution',300)
 
 

@@ -12,8 +12,16 @@ Assignment1/*
 Assignment1/src/*
 !Assignment1/src/grad_descent
 !Assignment1/src/newton_method
+Assignment1/src/grad_descent/*
+Assignment1/src/newton_method/*
+!Assignment1/src/grad_descent/plots
+!Assignment1/src/newton_method/plots
 
 #include Assignment2
 !Assignment2/
 Assignment2/*
 !Assignment2/src/
+Assignment2/src/*
+!Assignment2/src/laplace_1d
+!Assignment2/src/jacobi_gauss_seidel
+!Assignment2/src/two_level_solver

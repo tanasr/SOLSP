@@ -8,18 +8,17 @@ clear; close all; clc;
 
 %% Function F
 
-x = linspace(-3.5,3.5); 
-y = linspace(-4.5,4.5);
+x = linspace(-3,3); 
+y = linspace(-4,4);
+[X,Y] = meshgrid(x,y);
+Z = funcf(X,Y);
 
-newton_steps_g1 = newton_method(0,0,0.01,1e4,@dfdx,@dfdy,@hessian_f); % flag 'f' or 'g'
-newton_steps_g2 = newton_method(-1,0,0.01,1e4,@dfdx,@dfdy,@hessian_f);
+newton_steps_g1 = newton_method(0.5,2.5,0.01,1e3,@funcf,@dfdx,@dfdy,@hessian_f); % flag 'f' or 'g'
+newton_steps_g2 = newton_method(-1,-1,0.01,1e3,@funcf,@dfdx,@dfdy,@hessian_f);
 
 % contour plot
 subplot(1,3,1);
-
-[X,Y] = meshgrid(x,y);
-z = funcf(X,Y);
-contour(X,Y,z,50);
+contour(X,Y,Z,50);
 hold on;
 plot(newton_steps_g1(:,1),newton_steps_g1(:,2),'ro-');
 plot(newton_steps_g1(1,1),newton_steps_g1(1,2),'ko','linewidth',1.5); %starting point
@@ -34,15 +33,15 @@ title('Function F');
 x = linspace(-3,3); 
 y = linspace(-4,4);
 
-newton_steps_g1 = newton_method(2,-1,0.01,1e4,@dgdx,@dgdy,@hessian_g); % flag 'f' or 'g'
-newton_steps_g2 = newton_method(-2,-2,0.01,1e4,@dgdx,@dgdy,@hessian_g);
+newton_steps_g1 = newton_method(2,-1,0.01,1e4,@funcg,@dgdx,@dgdy,@hessian_g); % flag 'f' or 'g'
+newton_steps_g2 = newton_method(-2,-2,0.01,1e4,@funcg,@dgdx,@dgdy,@hessian_g);
 
 % contour plot
 subplot(1,3,2);
 [X,Y] = meshgrid(x,y);
-z = funcf(X,Y);
+Z = funcf(X,Y);
 
-contour(X,Y,z,50);
+contour(X,Y,Z,50);
 hold on;
 plot(newton_steps_g1(:,1),newton_steps_g1(:,2),'ro-');
 plot(newton_steps_g1(1,1),newton_steps_g1(1,2),'ko','linewidth',1.5); %starting point
@@ -78,5 +77,7 @@ y0=200;
 width=1250;
 height=450;
 set(gcf,'position',[x0,y0,width,height])
+exportgraphics(gcf,'plots/newton.png','Resolution',300)
+
 
 
