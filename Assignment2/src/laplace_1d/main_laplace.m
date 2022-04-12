@@ -1,3 +1,9 @@
+%Solution and Optimisation methods for Large-scale problems
+%Assignment 2 - Discretisation of Laplace1D
+%Author: Radenko Tanasic, MCS class
+% --------------------------------
+% Finite-Difference, Jacobi and Gauss-Seidel solvers, Two-level multi-grid method
+% --------------------------------
 clear, clc, close all;
 
 %% Ex. 1.3: Laplace FD
