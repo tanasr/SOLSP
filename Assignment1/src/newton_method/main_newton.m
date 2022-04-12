@@ -55,18 +55,19 @@ title('Function G');
 %% Symbolic differentiation
 % !!!! something is wrong here ... !!!
 syms x y;
-func = @(x, y) sin(x.^2+y).*cos(x-y.^2);
-steps_sym = newton_symbolic(func,0.8,1,0.01);
+func = @(x, y) (x+y).*sin(x-y^2).^2;
+steps_sym = newton_symbolic(func,2,3,0.1,1e4);
 
-x = linspace(-3, 3);
-y = linspace(-4, 4);
+x = linspace(-3.5, 3.5);
+y = linspace(-4.5, 4.5);
 [X, Y] = meshgrid(x,y);
-
 Z = func(X, Y);
+
 subplot(1,3,3);
-contour(X,Y,Z,20);
+contour(X,Y,Z,50);
 hold on;
-plot(steps_sym(:,1), steps_sym(:,2), "-o");hold on;
+plot(steps_sym(:,1), steps_sym(:,2), "-o");
+hold on;
 plot(steps_sym(1,1),steps_sym(1,2),'ko','linewidth',1.5); %starting point
 colorbar();
 
