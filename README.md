@@ -34,6 +34,7 @@ Implement the Jacobi and the Gauss-Seidel methods for solving a linear system of
 - Test the Jacobi and the Gauss-Seidel methods with the problem from Exercise 1 for a finite number of steps and different sizes of Lh by using a null vector as initial guess (u0 = 0).
 - Plot the norm of the residuals as a function of the steps.
 - In a separate chart plot the evolution of the error ek = u − uk as a function of x. Which smoother converges faster?
+![Jacobi_vx_GaussSeidel](Assignment2/src/jacobi_gauss_seidel/plots/jacobi_vs_gauss.png)
 
 
 ### Two-level multi-grid method
@@ -43,3 +44,5 @@ Implement a two-level mutli-grid solver, where:
 Make your implementation as general as possible, so you are able to change smoother on the fly.
 - Test the two-level multi-grid method with the model problem from Exercise 1 by using both the Jacobi and the Gauss-
 Seidel methods as a smoother. Plot the norm of the residuals and errors as a function of the steps in separate charts.
+
+**matlab code is following ...**

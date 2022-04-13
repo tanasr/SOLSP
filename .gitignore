@@ -1,5 +1,6 @@
 # ignore all files
 /*
+Assignment2/src/jacobi_gauss_seidel/.DS_Store
 
 #except
 !.gitignore
