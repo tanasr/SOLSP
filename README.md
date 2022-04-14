@@ -44,5 +44,4 @@ Implement a two-level mutli-grid solver, where:
 Make your implementation as general as possible, so you are able to change smoother on the fly.
 - Test the two-level multi-grid method with the model problem from Exercise 1 by using both the Jacobi and the Gauss-
 Seidel methods as a smoother. Plot the norm of the residuals and errors as a function of the steps in separate charts.
-
-**matlab code is following ...**
+![TwoLevelSmoother](Assignment2/src/two_level_solver/plots/two_level_mutligrid.png)
